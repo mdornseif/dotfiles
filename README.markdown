@@ -29,6 +29,8 @@ though.
 The main file you'll want to change right off the bat is `zsh/zshrc.symlink`,
 which sets up a few paths that'll be different on your particular machine.
 
+You also might want to set zsh as your default shell: `chsh -s /bin/zsh`.
+
 ## topical
 
 Everything's built around topic areas. If you're adding a new area to your
