@@ -8,24 +8,51 @@
 # install this to the correct location by running the project's main `rake`
 # task.
 [user]
-        name = Zach Holman
+        name = Maximillian Dornseif
         email = your@example.com
 [alias]
         co = checkout
-        promote = !$ZSH/bin/git-promote
-        wtf     = !$ZSH/bin/git-wtf
-        rank-contributers = !$ZSH/bin/git-rank-contributers
         count   = !git shortlog -sn
+        clog = log --pretty=format:\"%h%x09%an%x09%ad%x09%s\"
+        flog = log --name-status
+        prepush = log --graph --stat origin/master..
+        graph = log --graph --all --pretty=format:'%Cred%h%Creset - %Cgreen(%cr)%Creset %s%C(yellow)%d%Creset' --abbrev-commit --date=relative
+        slog = log --oneline --decorate
+        mlog = log --color --pretty=oneline --abbrev-commit
 [color]
         diff = auto
         status = auto
         branch = auto
+        ui = auto
 [core]
-        excludesfile = ~/.gitignore
-        editor = mate -w
+        #excludesfile = ~/.gitignore
+        #editor = mate -w
+        quotepath = false
+        whitespace = trailing-space,space-before-tab
 [apply]
         whitespace = nowarn
 [github]
-        user = holman
+        user = mdornseif
 [mergetool]
         keepBackup = false
+[diff]
+        tool = Kaleidoscope
+        word-diff = true
+        renames = copies
+        mnemonicprefix = true
+[difftool]
+        prompt = false
+[advice]
+        statusHints = false
+        pushNonFastForward = false
+[branch]
+        autosetupmerge = true
+[push]
+        default = tracking
+[rerere]
+        enabled = true
+[merge]
+        stat = true
+[difftool "Kaleidoscope"]
+        cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
+

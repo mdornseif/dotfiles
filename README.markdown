@@ -21,6 +21,7 @@ subject](http://zachholman.com/2010/08/dotfiles-are-meant-to-be-forked/).
 - `git clone git://github.com/holman/dotfiles ~/.dotfiles`
 - `cd ~/.dotfiles`
 - `rake install`
+- `cd ; ln -s .dotfiles/bin ./`
 
 The install rake task will symlink the appropriate files in `.dotfiles` to your
 home directory. Everything is configured and tweaked within `~/.dotfiles`,
